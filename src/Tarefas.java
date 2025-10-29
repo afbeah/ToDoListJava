@@ -50,9 +50,9 @@ public class Tarefas {
     public String toString() {
         return "Tarefas{" +
                 "Título = '" + titulo + '\'' +
-                ",Descrição = '" + descricao + '\'' +
-                ",Data da Entrega = " + dataEntrega +
-                ",Concluída = " + concluida +
+                ", Descrição = '" + descricao + '\'' +
+                ", Data da Entrega = " + dataEntrega +
+                ", Concluída = " + concluida +
                 '}';
     }
 }

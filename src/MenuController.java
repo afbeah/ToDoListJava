@@ -22,10 +22,11 @@ public class MenuController {
 
             System.out.println("====== Menu ======");
             System.out.println("1- Inserir Tarefas");
-            System.out.println("2- Lista Tarefas Pendentes");
-            System.out.println("3- Buscar Tarefa por Título");
-            System.out.println("4- Marcar Tarefa Concluída");
-            System.out.println("5- Remover Tarefa");
+            System.out.println("2- Listar Todas as Tarefas");
+            System.out.println("3- Listar Tarefas Pendentes");
+            System.out.println("4- Buscar Tarefa por Título");
+            System.out.println("5- Marcar Tarefa Concluída");
+            System.out.println("6- Remover Tarefa");
             System.out.println("0- Sair da Lista");
             System.out.println("==================");
 
@@ -38,9 +39,10 @@ public class MenuController {
             executando = switch (opcao){
                 case 1 -> handleInserirTarefas();
                 case 2 -> handleListarTarefas();
-                case 3 -> handleBuscarTarefa();
-                case 4 -> handleMarcarConcluida();
-                case 5 -> handleRemoverTarefa();
+                case 3 -> handleListarTarefasPendentes();
+                case 4 -> handleBuscarTarefa();
+                case 5 -> handleMarcarConcluida();
+                case 6 -> handleRemoverTarefa();
                 case 0 -> false;
                 default -> {
                     System.out.println("Opção Inválida!");
@@ -69,7 +71,16 @@ public class MenuController {
     }
 
     private boolean handleListarTarefas(){
-        System.out.println("\n== Listagem de Tarefas ==");
+        System.out.println("\n== Listar Tarefas ==");
+
+        gerenciador.listarTodas();
+        System.out.println("=======================\n");
+
+        return true;
+    }
+
+    private boolean handleListarTarefasPendentes(){
+        System.out.println("\n== Listar Tarefas Pendentes ==");
 
         gerenciador.listarPendentes();
 

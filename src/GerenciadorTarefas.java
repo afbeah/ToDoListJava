@@ -1,4 +1,5 @@
 import java.util.ArrayList;
+import java.util.Collections;
 import java.util.List;
 
 public class GerenciadorTarefas {
@@ -12,6 +13,24 @@ public class GerenciadorTarefas {
 
     public List<Tarefas> listarTodasTarefas(){
         return this.listaDeTarefas;
+    }
+
+    public void listarTodas(){
+        List<Tarefas> tarefas = this.listaDeTarefas;
+        if(tarefas.isEmpty()){
+            System.out.println("Nenhuma tarefa cadastrada.");
+            return;
+        }
+        System.out.println("ID | Status | Título");
+        System.out.println("----|--------|------");
+
+        for(int i = 0; i < tarefas.size(); i++){
+            Tarefas t = tarefas.get(i);
+
+            String status = t.isConcluida() ? "Concluída" : "Pendente";
+            System.out.printf("%2d | %s | %s\n", (i + 1), status, t.getTitulo());
+
+        }
     }
 
     public void listarPendentes(){
