@@ -133,30 +133,30 @@ public class MenuController {
     }
 
     private boolean handleRemoverTarefa(){
-            System.out.println("\n--- Remover Tarefa ---");
+        System.out.println("\n--- Remover Tarefa ---");
 
-            List<Tarefas> todasTarefas = gerenciador.listarTodasTarefas();
+        List<Tarefas> todasTarefas = gerenciador.listarTodasTarefas();
 
-            if (todasTarefas.isEmpty()) {
-                System.out.println("Não há tarefas cadastradas para remover.");
-                System.out.println("----------------------\n");
-                return true;
-            }
-
-            System.out.println("Lista atual de todas as tarefas:");
-            for(int i = 0; i < todasTarefas.size(); i++){
-                System.out.println((i + 1) + ". " + todasTarefas.get(i));
-            }
-
-            System.out.println("\nDigite o NÚMERO (ID) da tarefa que deseja remover:");
-            int idTarefa = scanner.nextInt();
-            scanner.nextLine();
-
-            gerenciador.removerTarefa(idTarefa);
-
+        if (todasTarefas.isEmpty()) {
+            System.out.println("Não há tarefas cadastradas para remover.");
             System.out.println("----------------------\n");
             return true;
         }
+
+        System.out.println("Lista atual de todas as tarefas:");
+        for(int i = 0; i < todasTarefas.size(); i++){
+            System.out.println((i + 1) + ". " + todasTarefas.get(i));
+        }
+
+        System.out.println("\nDigite o NÚMERO (ID) da tarefa que deseja remover:");
+        int idTarefa = scanner.nextInt();
+        scanner.nextLine();
+
+        gerenciador.removerTarefa(idTarefa);
+
+        System.out.println("----------------------\n");
+        return true;
+    }
 
 
 }

@@ -1,5 +1,4 @@
 import java.util.ArrayList;
-import java.util.Collections;
 import java.util.List;
 
 public class GerenciadorTarefas {
@@ -22,7 +21,7 @@ public class GerenciadorTarefas {
             return;
         }
         System.out.println("ID | Status | Título");
-        System.out.println("----|--------|------");
+        System.out.println("---|--------|------");
 
         for(int i = 0; i < tarefas.size(); i++){
             Tarefas t = tarefas.get(i);
